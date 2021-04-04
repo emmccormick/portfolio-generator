@@ -1,6 +1,6 @@
-const fs = require('fs');
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template');
+const { writeFile, copyFile } = require('./utils/generate-site');
 
 const promptUser = () => {
   return inquirer.prompt([
@@ -121,7 +121,7 @@ Add a New Project
       if (projectData.confirmAddProject) {
         return promptProject(portfolioData);
       } else {
-        return  ;
+        return portfolioData;
       }
     });
 };
